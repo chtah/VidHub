@@ -1,0 +1,27 @@
+.nav {
+  display: flex;
+  justify-content: space-between;
+  background-color: #ffffff;
+  padding: 20px;
+}
+
+.navLeft {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.navRight {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+
+  font-weight: 700;
+  color: #b4b8c6;
+}
+
+.logoName {
+  color: #4e9aff;
+  font-weight: 900;
+  font-size: 30px;
+}
