@@ -16,8 +16,9 @@
   align-items: center;
   gap: 20px;
 
-  font-weight: 700;
   color: #b4b8c6;
+  font-weight: 700;
+  font-size: 18px;
 }
 
 .logoName {

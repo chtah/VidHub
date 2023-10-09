@@ -1,0 +1,44 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  width: 260px;
+
+  background-color: #ffffff;
+  border-radius: 15px;
+}
+
+.image {
+  height: 140px;
+  object-fit: cover;
+  border-radius: 15px 15px 0 0;
+}
+
+.cardDescrip {
+  padding: 20px;
+  color: #6f6d73;
+}
+
+.title {
+  font-size: 14px;
+  font-weight: 500;
+  padding: 0 0 2px 0;
+}
+
+.creatorName {
+  font-size: 12px;
+  padding: 0 0 5px 0;
+}
+
+.comment {
+  font-size: 12px;
+  font-style: oblique;
+  padding: 0 0 5px 0;
+}
+
+.username {
+  font-size: 12px;
+}
+
+.rating {
+  font-size: 12px;
+}
