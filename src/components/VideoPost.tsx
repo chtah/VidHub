@@ -1,3 +1,4 @@
+import { Rating, Star } from '@smastrom/react-rating'
 import { VideoPostDTO } from '../types/dto'
 import classes from './VideoPost.module.css'
 
@@ -10,13 +11,22 @@ const VideoPost = ({ videoPost }: IVideoPostProps) => {
     <div className={classes.card}>
       <img className={classes.image} src={videoPost.thumbnailUrl} />
       <div className={classes.cardDescrip}>
-        <p className={classes.title}>{videoPost.videoTitle}</p>
-        <p className={classes.creatorName}>{videoPost.creatorName}</p>
-        <p className={classes.comment}>
-          <q>{videoPost.comment}</q>
-        </p>
-        <p className={classes.username}>{videoPost.postedBy.username}</p>
-        <p className={classes.rating}>{videoPost.rating}</p>
+        <div className={classes.titleANdComment}>
+          <p className={classes.title}>{videoPost.videoTitle}</p>
+          <p className={classes.creatorName}>{videoPost.creatorName}</p>
+          <p className={classes.comment}>
+            <q>{videoPost.comment}</q>
+          </p>
+        </div>
+        <div className={classes.userRatingGroup}>
+          <p className={classes.username}>{videoPost.postedBy.username}</p>
+          <Rating
+            value={videoPost.rating}
+            itemStyles={{ itemShapes: Star, activeFillColor: '#ffb700', inactiveFillColor: '#fbf1a9' }}
+            readOnly={true}
+            style={{ maxWidth: 100 }}
+          />
+        </div>
       </div>
     </div>
   )
