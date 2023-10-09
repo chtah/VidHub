@@ -1,13 +1,14 @@
 import classes from './Navbar.module.css'
 import VidHubLogo from '../assets/VidHub.svg'
+import { Link } from 'react-router-dom'
 
 const Navbar = () => {
   return (
     <div className={classes.nav}>
-      <div className={classes.navLeft}>
+      <Link className={classes.logo} to={'/'}>
         <img width="50px" src={VidHubLogo} alt="VidHubLogo" />
         <p className={classes.logoName}>VidHub</p>
-      </div>
+      </Link>
 
       <div className={classes.navRight}>
         <p>Profile</p>

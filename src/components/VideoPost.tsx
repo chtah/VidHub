@@ -1,6 +1,7 @@
 import { Rating, Star } from '@smastrom/react-rating'
 import { VideoPostDTO } from '../types/dto'
 import classes from './VideoPost.module.css'
+import { Link } from 'react-router-dom'
 
 interface IVideoPostProps {
   videoPost: VideoPostDTO
@@ -8,7 +9,7 @@ interface IVideoPostProps {
 
 const VideoPost = ({ videoPost }: IVideoPostProps) => {
   return (
-    <div className={classes.card}>
+    <Link className={classes.card} to={`/video/${videoPost.id}`}>
       <img className={classes.image} src={videoPost.thumbnailUrl} />
       <div className={classes.cardDescrip}>
         <div className={classes.titleANdComment}>
@@ -28,7 +29,7 @@ const VideoPost = ({ videoPost }: IVideoPostProps) => {
           />
         </div>
       </div>
-    </div>
+    </Link>
   )
 }
 
