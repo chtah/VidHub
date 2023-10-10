@@ -1,9 +1,9 @@
 import VideoPost from '../components/VideoPost'
-import useVideoPost from '../hooks/useVideoPost'
+import useVideoGet from '../hooks/useVideoGet'
 import classes from './Home.module.css'
 
 const Home = () => {
-  const { newVideoPost } = useVideoPost()
+  const { newVideoPost } = useVideoGet()
 
   return (
     <>
