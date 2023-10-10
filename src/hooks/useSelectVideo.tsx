@@ -7,6 +7,7 @@ const useSelectVideo = (id: string) => {
   const [videoDetail, newVideoDetail] = useState<VideoPostDTO | null>(null)
   const [isError, setIsError] = useState<boolean>(false)
   const [youtubeSrc, newYoutubeSrc] = useState<string>('')
+
   useEffect(() => {
     const fetchData = async () => {
       setIsLoading(true)

@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { VideoPostDTO } from '../types/dto'
 import axios from 'axios'
 
-const useVideoPost = () => {
+const useVideoGet = () => {
   const [newVideoPost, setNewVideoPost] = useState<VideoPostDTO[] | null>(null)
   const [isLoading, setIsLoading] = useState<boolean>(false)
 
@@ -24,4 +24,4 @@ const useVideoPost = () => {
   return { newVideoPost, isLoading }
 }
 
-export default useVideoPost
+export default useVideoGet

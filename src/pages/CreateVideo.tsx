@@ -26,6 +26,8 @@ const Create = () => {
       <div className={classes.labelAndInput}>
         <label>Video Url : </label>
         <input
+          className={classes.input}
+          placeholder="Insert Youtube URL"
           type="text"
           required
           onChange={(e) => {
@@ -37,6 +39,8 @@ const Create = () => {
       <div className={classes.labelAndInput}>
         <label>Comment : </label>
         <input
+          className={classes.input}
+          placeholder="Insert comment here"
           type="text"
           required
           onChange={(e) => {

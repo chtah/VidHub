@@ -1,11 +1,13 @@
 import { useState } from 'react'
 import { CreateVideoDTO, VideoPostDTO } from '../types/dto'
 import axios from 'axios'
+import { useNavigate } from 'react-router-dom'
 
 const useVideoPost = () => {
   const token = localStorage.getItem('token')
   const [isLoading, setIsLoading] = useState<boolean>(false)
   const [isLoadingButton, setIsLodingButton] = useState<boolean>(false)
+  const navigate = useNavigate()
   const Submit = async (newVideoUrl: string, newComment: string, newRating: number) => {
     setIsLodingButton(true)
     const newPostBody: CreateVideoDTO = {
@@ -28,6 +30,7 @@ const useVideoPost = () => {
     } finally {
       setIsLodingButton(false)
       setIsLoading(false)
+      navigate('/')
     }
   }
 

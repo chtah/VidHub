@@ -29,13 +29,17 @@
 }
 
 .active {
-  color: #4e5054;
+  color: #4e9aff;
   text-decoration: none;
 }
 
 .inActive {
   color: #b4b8c6;
   text-decoration: none;
+}
+
+.inActive:hover {
+  color: #4e9aff;
 }
 
 .inActive:hover {
