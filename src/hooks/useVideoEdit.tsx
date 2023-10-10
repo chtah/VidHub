@@ -28,6 +28,7 @@ const useVideoEdit = () => {
         },
       )
       console.log(res.data)
+      localStorage.removeItem('videoID')
     } catch (err) {
       throw new Error()
     } finally {

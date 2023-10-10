@@ -1,12 +1,13 @@
 import { Rating, Star } from '@smastrom/react-rating'
 import { useState } from 'react'
 import useVideoEdit from '../hooks/useVideoEdit'
+import { Link } from 'react-router-dom'
 
 const Edit = () => {
   const [newRating, setRating] = useState(0)
   const [newComment, setComment] = useState('')
   const { Submit, isLoadingButton } = useVideoEdit()
-
+  const videoID = localStorage.getItem('videoID')
   const handleClick = async () => {
     try {
       await Submit(newComment, newRating)
@@ -37,9 +38,11 @@ const Edit = () => {
           style={{ maxWidth: 200 }}
         />
 
-        <button onClick={handleClick} disabled={isLoadingButton}>
-          {isLoadingButton ? 'Submitting' : 'Submit'}
-        </button>
+        <Link to={`/video/${videoID}`}>
+          <button onClick={handleClick} disabled={isLoadingButton}>
+            {isLoadingButton ? 'Submitting' : 'Submit'}
+          </button>
+        </Link>
       </div>
     </>
   )
