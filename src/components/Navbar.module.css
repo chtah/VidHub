@@ -27,3 +27,17 @@
   font-weight: 900;
   font-size: 30px;
 }
+
+.active {
+  color: #4e5054;
+  text-decoration: none;
+}
+
+.inActive {
+  color: #b4b8c6;
+  text-decoration: none;
+}
+
+.inActive:hover {
+  cursor: pointer;
+}

@@ -16,3 +16,25 @@ export interface VideoPostDTO {
   createdAt: string
   updatedAt: string
 }
+
+export interface CreateVideoDTO {
+  videoUrl: string
+  comment: string
+  rating: number
+}
+
+export interface LoginDTO {
+  username: string
+  password: string
+}
+
+export interface CredentialDTO {
+  accessToken: string
+}
+
+export interface userDataDTO {
+  id: string
+  username: string
+  name: string
+  registeredAt: string
+}
