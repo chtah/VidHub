@@ -12,8 +12,8 @@ const Create = () => {
     e.preventDefault()
 
     try {
-      const NumberNewRating = Number(newRating)
-      await Submit(newVideoUrl, newComment, NumberNewRating)
+      //const NumberNewRating = Number(newRating)
+      await Submit(newVideoUrl, newComment, newRating)
       setVideoUrl('')
       setComment('')
       setRating(0)
