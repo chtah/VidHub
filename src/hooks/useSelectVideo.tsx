@@ -14,6 +14,7 @@ const useSelectVideo = (id: string) => {
         const res = await axios.get(`https://api.learnhub.thanayut.in.th/content/${id}`)
         newVideoDetail(res.data)
         newYoutubeSrc(res.data.videoUrl)
+        localStorage.setItem('videoID', res.data.id)
       } catch (err) {
         console.log(err)
         setIsError(true)

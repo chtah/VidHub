@@ -3,9 +3,12 @@ import useSelectVideo from '../hooks/useSelectVideo'
 import classes from './VideoDetail.module.css'
 import YouTube from 'react-youtube'
 import { Rating, Star } from '@smastrom/react-rating'
+import useUserData from '../hooks/useUserData'
+import { Link } from 'react-router-dom'
 const VideoDetail = () => {
   const { id } = useParams()
   const { videoDetail, isLoading, isError, youtubeSrc } = useSelectVideo(id || '1')
+  const { newUserData } = useUserData()
 
   //For translate link to run in Youtube api
   let translateSrc = ''
@@ -37,6 +40,12 @@ const VideoDetail = () => {
               readOnly={true}
               style={{ maxWidth: 120 }}
             />
+            {newUserData && newUserData.id === videoDetail.postedBy.id ? (
+              <Link to="/edit">
+                <button>Edit</button>
+              </Link>
+            ) : null}
+            {newUserData && newUserData.id === videoDetail.postedBy.id ? <button>Delete</button> : null}
           </div>
         </div>
       )}

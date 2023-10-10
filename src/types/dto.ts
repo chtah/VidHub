@@ -38,3 +38,8 @@ export interface userDataDTO {
   name: string
   registeredAt: string
 }
+
+export interface VideoEditDTO {
+  comment: string
+  rating: number
+}
