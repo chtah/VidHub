@@ -10,6 +10,7 @@ const Edit = () => {
   const { Submit, isLoadingButton } = useVideoEdit()
   const videoID = localStorage.getItem('videoID')
   const navigate = useNavigate()
+
   const handleClick = async () => {
     try {
       await Submit(newComment, newRating)
