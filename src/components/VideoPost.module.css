@@ -18,7 +18,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 150px;
+  height: 170px;
   padding: 20px;
   color: #6f6d73;
 }
@@ -38,6 +38,7 @@
   font-size: 12px;
   font-style: oblique;
   padding: 0 0 5px 0;
+  opacity: 0.8;
 }
 
 .userRatingGroup {

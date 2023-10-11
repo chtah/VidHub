@@ -6,6 +6,8 @@ import { Rating, Star } from '@smastrom/react-rating'
 import useUserData from '../hooks/useUserData'
 import { Link } from 'react-router-dom'
 import useVideoDelete from '../hooks/useVideoDelete'
+import { Player } from '@lottiefiles/react-lottie-player'
+import loadingLogo from '../assets/Loading.json'
 const VideoDetail = () => {
   const { id } = useParams()
   const { videoDetail, isLoading, isError, youtubeSrc } = useSelectVideo(id || '1')
@@ -24,7 +26,7 @@ const VideoDetail = () => {
 
   return (
     <>
-      {isLoading ? <h1>Loading...</h1> : null}
+      {isLoading ? <Player autoplay loop src={loadingLogo} style={{ height: '300px', width: '300px' }}></Player> : null}
       {isError ? <h3>Error For Load</h3> : null}
       {videoDetail && (
         <div className={classes.card}>

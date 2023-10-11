@@ -9,6 +9,7 @@ import { useAuth } from './providers/AuthProvider'
 import Profile from './pages/Profile'
 import Create from './pages/CreateVideo'
 import Edit from './pages/Edit'
+import '@lottiefiles/lottie-player'
 
 function App() {
   const { isLoggedIn } = useAuth()
