@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { CreateVideoDTO, VideoPostDTO } from '../types/dto'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
+import toast from 'react-hot-toast'
 
 const useVideoPost = () => {
   const token = localStorage.getItem('token')
@@ -15,7 +16,9 @@ const useVideoPost = () => {
       comment: newComment,
       rating: newRating,
     }
-
+    const notifySubmit = () => {
+      toast.success('Created Video', { position: 'top-center', duration: 2000 })
+    }
     setIsLoading(true)
     try {
       const res = await axios.post<VideoPostDTO>('https://api.learnhub.thanayut.in.th/content', newPostBody, {
@@ -24,13 +27,16 @@ const useVideoPost = () => {
           Authorization: `Bearer ${token}`,
         },
       })
+      navigate('/')
+      setTimeout(() => {
+        notifySubmit()
+      }, 500)
       console.log(res.data)
     } catch (err) {
       throw new Error()
     } finally {
       setIsLodingButton(false)
       setIsLoading(false)
-      navigate('/')
     }
   }
 
