@@ -16,6 +16,8 @@ const useSelectVideo = (id: string) => {
         newVideoDetail(res.data)
         newYoutubeSrc(res.data.videoUrl)
         localStorage.setItem('videoID', res.data.id)
+        localStorage.setItem('comment', res.data.comment)
+        localStorage.setItem('rating', res.data.rating)
       } catch (err) {
         console.log(err)
         setIsError(true)

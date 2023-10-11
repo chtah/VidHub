@@ -5,11 +5,13 @@ import { useNavigate } from 'react-router-dom'
 import classes from './Edit.module.css'
 
 const Edit = () => {
-  const [newRating, setRating] = useState(0)
-  const [newComment, setComment] = useState('')
+  const [newRating, setRating] = useState(Number(localStorage.getItem('rating')))
+  const [newComment, setComment] = useState(String(localStorage.getItem('comment')))
   const { Submit, isLoadingButton } = useVideoEdit()
   const videoID = localStorage.getItem('videoID')
   const navigate = useNavigate()
+
+  console.log(newRating)
 
   const handleClick = async () => {
     try {
@@ -27,6 +29,7 @@ const Edit = () => {
       <p className={classes.title}>Edit Comment</p>
       <div className={classes.card}>
         <input
+          value={newComment}
           className={classes.input}
           placeholder="Edit comment here"
           type="text"
@@ -35,7 +38,6 @@ const Edit = () => {
             setComment(e.target.value)
           }}
         />
-
         <Rating
           value={newRating}
           onChange={setRating}
