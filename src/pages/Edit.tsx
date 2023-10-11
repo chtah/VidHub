@@ -25,17 +25,19 @@ const Edit = () => {
 
   return (
     <div className={classes.container}>
-      <div className={classes.backAndTitle}>
-        <Link to={`/video/${videoID}`} className={classes.back}>
+      <div className={classes.backDiv}>
+        <Link className={classes.back} to={`/video/${videoID}`}>
           {'<'}
         </Link>
+      </div>
+      <div className={classes.titleDiv}>
         <p className={classes.title}>Edit Comment</p>
       </div>
 
-      <div className={classes.card}>
+      <div className={classes.inputDiv}>
         <input
-          value={newComment}
           className={classes.input}
+          value={newComment}
           placeholder="Edit comment here"
           type="text"
           required
@@ -43,14 +45,24 @@ const Edit = () => {
             setComment(e.target.value)
           }}
         />
+      </div>
+
+      <div className={classes.ratingDiv}>
         <Rating
+          className={classes.rating}
           value={newRating}
           onChange={setRating}
           itemStyles={{ itemShapes: Star, activeFillColor: '#ffb700', inactiveFillColor: '#fbf1a9' }}
           style={{ maxWidth: 200 }}
         />
+      </div>
 
-        <button onClick={handleClick} disabled={isLoadingButton}>
+      <div className={classes.buttonDiv}>
+        <button
+          className={isLoadingButton ? classes.buttonLoading : classes.button}
+          onClick={handleClick}
+          disabled={isLoadingButton}
+        >
           {isLoadingButton ? 'Submitting' : 'Submit'}
         </button>
       </div>
