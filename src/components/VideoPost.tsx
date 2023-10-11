@@ -8,6 +8,11 @@ interface IVideoPostProps {
 }
 
 const VideoPost = ({ videoPost }: IVideoPostProps) => {
+  //for remove item from local storage when comeback to HOME
+  localStorage.removeItem('comment')
+  localStorage.removeItem('rating')
+  localStorage.removeItem('videoID')
+
   return (
     <Link className={classes.card} to={`/video/${videoPost.id}`}>
       <img className={classes.image} src={videoPost.thumbnailUrl} />

@@ -3,15 +3,14 @@ import { useState } from 'react'
 import useVideoEdit from '../hooks/useVideoEdit'
 import { useNavigate } from 'react-router-dom'
 import classes from './Edit.module.css'
+import { Link } from 'react-router-dom'
 
 const Edit = () => {
-  const [newRating, setRating] = useState(Number(localStorage.getItem('rating')))
-  const [newComment, setComment] = useState(String(localStorage.getItem('comment')))
+  const [newRating, setRating] = useState(Number(localStorage.getItem('rating'))) //for default rating holder
+  const [newComment, setComment] = useState(String(localStorage.getItem('comment'))) //for default comment holder
   const { Submit, isLoadingButton } = useVideoEdit()
   const videoID = localStorage.getItem('videoID')
   const navigate = useNavigate()
-
-  console.log(newRating)
 
   const handleClick = async () => {
     try {
@@ -26,7 +25,13 @@ const Edit = () => {
 
   return (
     <div className={classes.container}>
-      <p className={classes.title}>Edit Comment</p>
+      <div className={classes.backAndTitle}>
+        <Link to={`/video/${videoID}`} className={classes.back}>
+          {'<'}
+        </Link>
+        <p className={classes.title}>Edit Comment</p>
+      </div>
+
       <div className={classes.card}>
         <input
           value={newComment}

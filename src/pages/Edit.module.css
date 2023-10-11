@@ -11,6 +11,11 @@
   background-color: #ffffff;
 }
 
+.backAndTitle {
+  display: grid;
+  grid-template-columns: 0.5fr 1fr;
+}
+
 .title {
   font-size: 20px;
   font-weight: 500;
