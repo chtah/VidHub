@@ -2,6 +2,7 @@ import axios from 'axios'
 import { ReactNode, createContext, useContext, useState } from 'react'
 import { CredentialDTO, LoginDTO } from '../types/dto'
 import { useNavigate } from 'react-router'
+import toast from 'react-hot-toast'
 
 interface IAuthProviderProps {
   children: ReactNode
@@ -39,6 +40,7 @@ const AuthProvider = ({ children }: IAuthProviderProps) => {
 
       localStorage.setItem('token', res.data.accessToken)
       localStorage.setItem('username', username)
+      localStorage.setItem('loginStatus', 'login')
       setIsLoggIn(true)
       setUsername(username)
     } catch (err) {
@@ -47,7 +49,16 @@ const AuthProvider = ({ children }: IAuthProviderProps) => {
   }
 
   const logout = () => {
-    localStorage.clear(), setUsername(null), setIsLoggIn(false), navigate('/')
+    const notifyLogout = () => {
+      toast.success('Logged out', { position: 'top-center', duration: 3000 })
+    }
+
+    localStorage.clear(),
+      setUsername(null),
+      setIsLoggIn(false),
+      localStorage.setItem('loginStatus', 'logout'),
+      navigate('/'),
+      notifyLogout()
   }
 
   return <AuthContext.Provider value={{ isLoggedIn, login, username, logout }}>{children}</AuthContext.Provider>

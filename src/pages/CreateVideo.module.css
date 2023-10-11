@@ -1,23 +1,54 @@
 .postForm {
   display: flex;
   flex-direction: column;
-  width: 400px;
+  width: 390px;
   padding: 25px;
   margin: 50px auto auto auto;
 
+  box-shadow: 0 0 10px 5px rgb(0 0 0 / 0.05);
   background-color: #ffffff;
   border-radius: 20px;
-  gap: 10px;
+  gap: 20px;
 }
 
 .button {
-  margin: 10px 0 0 0;
+  width: 90px;
+  height: 45px;
+
+  border: none;
+  background: none;
+  padding: none;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 600;
+  background-color: #4e9aff;
+  border-radius: 10px;
+  margin: auto;
+}
+
+.buttonLoading {
+  width: 110px;
+  height: 45px;
+
+  border: none;
+  background: none;
+  padding: none;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 600;
+  background-color: #4e9aff;
+  border-radius: 10px;
+  margin: auto;
 }
 
 .labelAndInput {
   display: flex;
   justify-content: space-between;
+
+  color: #4e9aff;
+  font-weight: 500;
 }
+
 .Star {
   display: flex;
   justify-content: center;
@@ -25,8 +56,18 @@
 
 .input {
   width: 280px;
+  border: 2px solid #4e9aff;
+  border-radius: 4px;
 }
 
 .input::placeholder {
   text-align: center;
+}
+
+.input:focus {
+  outline: none;
+}
+
+.button:hover {
+  cursor: pointer;
 }

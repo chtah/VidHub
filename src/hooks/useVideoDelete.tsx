@@ -1,5 +1,6 @@
 import axios from 'axios'
 import { useState } from 'react'
+import toast from 'react-hot-toast'
 import { useNavigate } from 'react-router-dom'
 
 const useVideoDelete = () => {
@@ -8,6 +9,9 @@ const useVideoDelete = () => {
   const navigate = useNavigate()
   const [isLoadingDeleteButton, setIsLoadingDeleteButton] = useState<boolean>(false)
   const videoDelete = async () => {
+    const notifyDeleted = () => {
+      toast.success('Deleted', { position: 'top-center', duration: 2000 })
+    }
     setIsLoadingDeleteButton(true)
     try {
       await axios.delete(`https://api.learnhub.thanayut.in.th/content/${videoID}`, {
@@ -17,6 +21,9 @@ const useVideoDelete = () => {
         },
       })
       navigate('/')
+      setTimeout(() => {
+        notifyDeleted()
+      }, 500)
     } catch (err) {
       console.log('error')
     } finally {
