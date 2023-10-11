@@ -30,8 +30,8 @@ const VideoDetail = () => {
       {isLoading ? <Player autoplay loop src={loadingLogo} style={{ height: '300px', width: '300px' }}></Player> : null}
       {isError ? navigate('/') : null}
       {videoDetail && (
-        <div>
-          <div className={classes.card}>
+        <div className={classes.container}>
+          <div className={classes.videoAndTitle}>
             <p className={classes.title}>{videoDetail.videoTitle}</p>
             <YouTube videoId={translateSrc} />
           </div>
@@ -55,7 +55,7 @@ const VideoDetail = () => {
 
             <div className={classes.commentDiv}>
               <p className={classes.comment}>
-                <q>{videoDetail.comment}</q>
+                <q> {videoDetail.comment} </q>
               </p>
             </div>
 

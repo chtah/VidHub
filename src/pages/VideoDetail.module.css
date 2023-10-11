@@ -1,4 +1,4 @@
-.card {
+.videoAndTitle {
   background-color: #f5f7fc;
   display: flex;
   flex-direction: column;
@@ -62,7 +62,7 @@
   display: flex;
   justify-content: center;
   gap: 100px;
-  margin: 5px auto auto auto;
+  margin: 10px auto;
   width: 400px;
 }
 
@@ -105,8 +105,8 @@
 }
 
 .editButton {
-  width: 80px;
-  height: 30px;
+  width: 100px;
+  height: 35px;
 
   border: none;
   background: none;
@@ -119,8 +119,8 @@
 }
 
 .deleteButton {
-  width: 80px;
-  height: 30px;
+  width: 100px;
+  height: 35px;
 
   border: none;
   background: none;

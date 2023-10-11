@@ -58,7 +58,7 @@ const Create = () => {
         />
       </div>
 
-      <button className={classes.button} disabled={isLoadingButton}>
+      <button className={isLoadingButton ? classes.buttonLoading : classes.button} disabled={isLoadingButton}>
         {isLoadingButton ? 'Submitting' : 'Submit'}
       </button>
     </form>
