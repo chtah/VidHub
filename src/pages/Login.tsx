@@ -8,16 +8,29 @@ const Login = () => {
   const { login } = useAuth()
   const [username, setUsername] = useState<string>('')
   const [password, setPassword] = useState<string>('')
+
   const navigate = useNavigate()
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault() //Dont forget () I will forget mostly
+
     const notifySuccess = () => {
       toast.success('Login Success', { position: 'top-center', duration: 3000 })
     }
+
     const notifyError = () => {
-      toast.error('Wrong username or password', { position: 'top-center', duration: 1500 })
+      toast.error('Wrong username or password', {
+        id: 'errorLogin',
+        position: 'top-center',
+        duration: 2000,
+        style: { background: '#f44336', color: '#ffffff' },
+        iconTheme: {
+          primary: '#ffffff',
+          secondary: '#f44336',
+        },
+      })
     }
+
     try {
       await login(username, password)
       navigate('/')

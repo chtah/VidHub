@@ -10,7 +10,15 @@ const useVideoDelete = () => {
   const [isLoadingDeleteButton, setIsLoadingDeleteButton] = useState<boolean>(false)
   const videoDelete = async () => {
     const notifyDeleted = () => {
-      toast.success('Deleted', { position: 'top-center', duration: 2000 })
+      toast.success('Deleted', {
+        position: 'top-center',
+        duration: 2000,
+        style: { background: '#f44336', color: '#ffffff' },
+        iconTheme: {
+          primary: '#ffffff',
+          secondary: '#f44336',
+        },
+      })
     }
     setIsLoadingDeleteButton(true)
     try {
